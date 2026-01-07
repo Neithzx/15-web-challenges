@@ -1,0 +1,103 @@
+/* Reseteo básico para quitar márgenes por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    /* CENTRADO PERFECTO CON FLEXBOX */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.card {
+    background-color: white;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden; /* Para que el borde redondeado corte la imagen de cabecera */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover: la tarjeta sube un poco al pasar el mouse */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    height: 120px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.profile-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    border: 5px solid white;
+    margin-top: -60px; /* Sube la imagen para que quede mitad arriba mitad abajo */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #777;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bio {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 2px solid #4facfe;
+    color: #4facfe;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #4facfe;
+    color: white;
+}
+
+/* Un estilo diferente para el botón primario */
+.btn-primary {
+    background-color: #4facfe;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #00f2fe;
+    border-color: #00f2fe;
+}
