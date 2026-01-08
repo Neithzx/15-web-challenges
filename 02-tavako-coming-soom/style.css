@@ -1,0 +1,151 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #111;
+}
+
+.hero {
+    position: relative;
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* IMAGEN DE FONDO */
+    background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; /* Cubre todo el espacio sin deformarse */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Capa negra semitransparente (Overlay) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Negro al 75% */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Encima del overlay */
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.band-name {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 8px; /* Espacio entre letras estilo rock */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.status {
+    color: #f39c12; /* Color naranja/dorado */
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.cta-text {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* Estilos del formulario */
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.newsletter input {
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.newsletter input:focus {
+    border-color: #f39c12;
+    background: rgba(0,0,0,0.5);
+}
+
+.newsletter button {
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    background: #f39c12;
+    color: #111;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.newsletter button:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* Iconos Sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f39c12;
+    transform: translateY(-5px);
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 768px) {
+    .band-name {
+        font-size: 6rem;
+    }
+
+    .newsletter {
+        flex-direction: row; /* Input al lado del botón */
+        justify-content: center;
+    }
+
+    .newsletter input {
+        width: 60%;
+        text-align: left;
+    }
+
+    .newsletter button {
+        width: auto;
+    }
+}
