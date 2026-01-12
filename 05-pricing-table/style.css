@@ -1,0 +1,168 @@
+:root {
+    --bg-color: #f7faff;
+    --primary: #6c5ce7; /* Purple */
+    --primary-dark: #5649c0;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* Padding to prevent cutting off on small screens */
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows cards to wrap on mobile */
+    gap: 30px;
+}
+
+/* Base Card Style */
+.card {
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect for side cards */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.tier {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.desc {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Features List */
+.features {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left; /* Align text to left for readability */
+    padding-left: 20px;
+}
+
+.features li {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.features i {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- THE POPULAR CARD (Middle one) --- */
+.popular {
+    background: var(--primary); /* Full color background */
+    color: white;
+    transform: scale(1.1); /* Makes it 10% bigger */
+    z-index: 1; /* Brings it to the front */
+    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.4);
+}
+
+/* Adjusting colors for the dark card */
+.popular .tier, 
+.popular .price, 
+.popular .desc, 
+.popular .features li {
+    color: white;
+}
+
+.popular .features i {
+    color: #81ecec; /* Light cyan checkmarks */
+}
+
+.popular .btn-primary {
+    background: white;
+    color: var(--primary);
+    border: none;
+}
+
+.popular .btn-primary:hover {
+    background: #dfe6e9;
+}
+
+/* Badge for "Most Popular" */
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff7675;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+    
+    .popular {
+        transform: scale(1); /* Reset size on mobile so it fits */
+    }
+}
