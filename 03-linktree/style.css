@@ -1,0 +1,98 @@
+:root {
+    /* Color Palette Variables */
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --btn-bg: #2d2d2d;
+    --btn-hover: #ffffff;
+    --btn-text-hover: #1a1a1a;
+    --accent: #39E09B; /* A nice Mint Green */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Limits width to look like a phone app */
+    text-align: center;
+}
+
+/* Profile Styles */
+.profile {
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.profile p {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+/* Links Styles */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+}
+
+.link-btn {
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 18px 20px;
+    border-radius: 50px; /* Fully rounded buttons */
+    border: 2px solid transparent;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    
+    /* Flex inside the button to center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hover Effects */
+.link-btn:hover {
+    background-color: var(--btn-hover);
+    color: var(--btn-text-hover);
+    transform: scale(1.02); /* Slight zoom effect */
+    border-color: var(--accent);
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
