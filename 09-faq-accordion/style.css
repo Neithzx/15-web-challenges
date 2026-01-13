@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --primary: #6c5ce7; /* Purple */
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --border: #dfe6e9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.faq-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-header .icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.faq-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.faq-header p {
+    color: var(--text-light);
+}
+
+/* --- THE ACCORDION STYLES --- */
+
+details {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Remove the default black triangle */
+summary {
+    list-style: none; /* Standard */
+    cursor: pointer;
+    font-weight: 700;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+/* Remove default triangle for Webkit browsers (Chrome/Safari) */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom Icon using ::after */
+summary::after {
+    content: '+'; /* The plus sign */
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+/* Styling the answer text */
+.answer {
+    color: var(--text-light);
+    line-height: 1.6;
+    padding-bottom: 20px;
+    font-size: 0.95rem;
+    /* Optional: Small animation for text appearing */
+    animation: fadeIn 0.5s ease;
+}
+
+/* --- STATE: WHEN OPEN --- */
+
+/* Change the background slightly when open */
+details[open] {
+    /* No huge change needed, maybe just visual separation */
+}
+
+/* Rotate the icon when open */
+details[open] summary::after {
+    transform: rotate(45deg); /* Turns '+' into 'x' */
+}
+
+details[open] summary {
+    color: var(--primary); /* Highlight the question text */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
