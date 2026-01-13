@@ -1,0 +1,177 @@
+:root {
+    --primary: #FF416C; /* A nice gradient pink/red */
+    --secondary: #FF4B2B;
+    --dark: #1a1a1a;
+    --light: #f9f9f9;
+    --text-gray: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    overflow: hidden; /* Keeps the border radius intact */
+    display: flex; /* SPLIT SCREEN LAYOUT */
+    flex-wrap: wrap; /* Allows stacking on mobile */
+}
+
+/* --- LEFT SIDE: INFO --- */
+.contact-info {
+    flex: 1; /* Takes up 50% space usually */
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-line i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 30px; /* Aligns icons vertically */
+}
+
+.socials {
+    margin-top: 30px;
+}
+
+.socials a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: white;
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* --- RIGHT SIDE: FORM --- */
+.contact-form {
+    flex: 1.5; /* Takes slightly more space than info */
+    padding: 40px;
+    background: white;
+    min-width: 300px;
+}
+
+.form-title {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* Custom Input Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ddd; /* Only bottom border */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none; /* Remove default blue glow */
+    transition: 0.3s;
+    background: transparent;
+}
+
+/* Focus Effect: Change border color */
+input:focus, textarea:focus {
+    border-bottom-color: var(--secondary);
+}
+
+textarea {
+    resize: none; /* Stops user from resizing textarea */
+}
+
+button {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
+    
+    .contact-info {
+        padding: 30px;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
+}
