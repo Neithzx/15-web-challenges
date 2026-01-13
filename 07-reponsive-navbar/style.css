@@ -1,0 +1,127 @@
+/* Variables de colores */
+:root {
+    --primary: #2c3e50;
+    --accent: #e74c3c;
+    --text-light: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* --- ESTILOS DE LA BARRA (DESKTOP) --- */
+.navbar {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    color: var(--text-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky; /* Se queda pegada arriba */
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Botón especial de contacto */
+.btn-contact {
+    background-color: var(--accent);
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+    color: white !important;
+}
+
+/* Elementos del menú móvil ocultos por defecto en PC */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none; /* Checkbox siempre oculto */
+}
+
+/* Contenido de relleno */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        position: relative; /* Cambia posicionamiento para el menú desplegable */
+    }
+
+    .hamburger {
+        display: block; /* Muestra el icono en móvil */
+    }
+
+    .nav-links {
+        /* Ocultar el menú inicialmente */
+        display: none; 
+        
+        /* Estilos para cuando se despliegue */
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary);
+        position: absolute;
+        top: 100%; /* Justo debajo de la barra */
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* EL TRUCO FINAL: CSS selecciona el hermano (~) */
+    /* Cuando el checkbox está checked, busca la lista .nav-links y ponla flex */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+}

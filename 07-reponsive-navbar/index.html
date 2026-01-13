@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsiva</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- 1. LOGO -->
+        <div class="logo">TAVAKO</div>
+
+        <!-- 2. EL TRUCO DEL CHECKBOX (Invisible pero funcional) -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- 3. EL ICONO DE HAMBURGUESA (Es un label conectado al checkbox) -->
+        <label for="menu-toggle" class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- 4. EL MENÚ DE ENLACES -->
+        <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">La Banda</a></li>
+            <li><a href="#">Música</a></li>
+            <li><a href="#">Fundación</a></li>
+            <li><a href="#" class="btn-contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Un contenido de relleno para que veas cómo queda la barra arriba -->
+    <section class="hero">
+        <h1>Bienvenido al sitio oficial</h1>
+        <p>Prueba redimensionar la pantalla para ver el menú en acción.</p>
+    </section>
+
+</body>
+</html>
