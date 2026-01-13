@@ -101,10 +101,6 @@ summary::after {
 
 /* --- STATE: WHEN OPEN --- */
 
-/* Change the background slightly when open */
-details[open] {
-    /* No huge change needed, maybe just visual separation */
-}
 
 /* Rotate the icon when open */
 details[open] summary::after {
