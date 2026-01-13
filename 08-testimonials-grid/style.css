@@ -1,0 +1,128 @@
+:root {
+    --purple: #733FC8;
+    --gray: #48556A;
+    --black: #19202D;
+    --white: #ffffff;
+    --light-gray: #cfcfcf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: #ECF2F8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* --- GRID LAYOUT --- */
+.testimonial-grid {
+    display: grid;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    /* Mobile First: 1 column by default */
+    grid-template-columns: 1fr; 
+}
+
+/* --- CARD STYLES --- */
+.card {
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+    margin-right: 15px;
+}
+
+.user-info h3 {
+    font-size: 0.9rem;
+}
+
+.user-info p {
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.quote {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+/* --- COLORS --- */
+.bg-purple {
+    background-color: var(--purple);
+    color: var(--white);
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTA0IDEwMlYwaC0yLjFDMTAxLjkgNDMuMiA2OC41IDc2LjQgMCA3Ni40djI1LjZoMTA0eiIgZmlsbD0iIzVENDVCOCIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: top right 20px;
+}
+
+.bg-gray {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+.bg-black {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.bg-white {
+    background-color: var(--white);
+    color: var(--gray);
+}
+
+/* --- DESKTOP LAYOUT (The Magic) --- */
+@media (min-width: 900px) {
+    .testimonial-grid {
+        /* Create 4 equal columns */
+        grid-template-columns: repeat(4, 1fr);
+        /* Define 2 explicit rows (optional, but helps control height) */
+        grid-template-rows: repeat(2, auto);
+    }
+
+    /* Span 2 columns wide */
+    .col-span-2 {
+        grid-column: span 2;
+    }
+
+    /* Span 2 rows tall (The last card usually) */
+    /* NOTE: We need to target the last card specifically or add a class */
+    .row-span-2 {
+        grid-column: 4;     /* Force it to the 4th column */
+        grid-row: 1 / span 2; /* Start at row 1 and span 2 rows */
+    }
+    
+    /* Specific tweaks for order if needed */
+    /* This makes sure the black card sits nicely under the others */
+    .bg-black {
+        grid-column: 2 / span 2; 
+    }
+}
