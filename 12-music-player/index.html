@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tavako Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!-- Icons: Material Icons (Rounded) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+
+    <main class="player-container">
+        
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <span class="material-icons-round">expand_more</span>
+            <span>Now Playing</span>
+            <span class="material-icons-round">more_horiz</span>
+        </div>
+
+        <!-- ALBUM ART -->
+        <div class="img-area">
+            <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=600&q=80" alt="Album Cover">
+        </div>
+
+        <!-- SONG DETAILS -->
+        <div class="song-details">
+            <h1 class="name">Midnight Riff</h1>
+            <p class="artist">Tavako Band</p>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-area">
+            <div class="progress-bar">
+                <audio id="main-audio" src=""></audio>
+            </div>
+            <div class="song-timer">
+                <span class="current-time">1:45</span>
+                <span class="max-duration">3:50</span>
+            </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <span class="material-icons-round" id="repeat">repeat</span>
+            <span class="material-icons-round" id="prev">skip_previous</span>
+            
+            <div class="play-pause">
+                <span class="material-icons-round">play_arrow</span>
+            </div>
+            
+            <span class="material-icons-round" id="next">skip_next</span>
+            <span class="material-icons-round" id="list">queue_music</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
