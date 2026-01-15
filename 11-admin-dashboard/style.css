@@ -1,0 +1,211 @@
+:root {
+    --main-color: #2c3e50;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+    --sidebar-width: 260px;
+    --bg-color: #f1f5f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+/* --- SIDEBAR STYLES --- */
+.sidebar {
+    width: var(--sidebar-width);
+    position: fixed; /* STAYS IN PLACE WHEN SCROLLING */
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: 100;
+    transition: width 300ms;
+}
+
+.brand {
+    height: 90px;
+    padding: 1rem 0rem 1rem 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand span {
+    color: #FF416C;
+}
+
+.nav-links {
+    margin-top: 1rem;
+}
+
+.nav-links li {
+    width: 100%;
+    margin-bottom: 1.3rem;
+    padding-left: 1rem;
+}
+
+.nav-links a {
+    padding-left: 1rem;
+    display: flex;
+    color: #fff;
+    font-size: 1.1rem;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    background: #fff;
+    color: var(--main-color);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.nav-links span {
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content {
+    transition: margin-left 300ms;
+    margin-left: var(--sidebar-width); /* PUSH CONTENT TO RIGHT */
+    padding: 2rem;
+}
+
+header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* --- CARDS --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-single {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-single div:last-child span {
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.card-single div:first-child span {
+    color: var(--text-grey);
+}
+
+/* --- TABLE SECTION --- */
+.recent-grid {
+    margin-top: 2rem;
+}
+
+.projects {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+.card-header button {
+    background: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+thead td {
+    font-weight: 700;
+}
+
+td {
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    color: #222;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.status {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.green { background: #2ecc71; }
+.yellow { background: #f1c40f; }
+.red { background: #e74c3c; }
+
+/* --- RESPONSIVE FOR MOBILE --- */
+@media only screen and (max-width: 960px) {
+    /* Hide sidebar text on tablet, keep icons */
+    .sidebar { width: 70px; }
+    .sidebar .brand h2, .sidebar li a span { display: none; }
+    .main-content { margin-left: 70px; }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Move sidebar to bottom on phone or hide it (Simplified for this challenge) */
+    .cards { grid-template-columns: 100%; }
+    
+    /* Typically here you would use the checkbox hack from Project 7 to toggle the menu */
+}

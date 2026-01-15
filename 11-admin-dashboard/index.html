@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tavako Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-guitar"></i>
+            <h2>Tavako<span class="danger">Admin</span></h2>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class="fa-solid fa-gauge"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Fans/Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Bookings</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Donations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li class="bottom-link">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+        <header>
+            <h1>Overview</h1>
+            <div class="user-wrapper">
+                <img src="https://live.staticflickr.com/65535/55037521413_e617171a08_z.jpg" alt="Admin">
+                <div>
+                    <h4>Neithzx Dev</h4>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD CARDS -->
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h1>54</h1>
+                    <span>Pending Bookings</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div>
+                    <h1>$7,500</h1>
+                    <span>Donations (Month)</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div>
+                    <h1>124</h1>
+                    <span>New Fans</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECENT ACTIVITY TABLE -->
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card-header">
+                    <h3>Recent Donations</h3>
+                    <button>See all <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="card-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Donor Name</td>
+                                <td>Instrument</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juan Perez</td>
+                                <td>Electric Guitar</td>
+                                <td><span class="status green"></span> Received</td>
+                            </tr>
+                            <tr>
+                                <td>Maria Rodriguez</td>
+                                <td>Drum Set</td>
+                                <td><span class="status yellow"></span> Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Diaz</td>
+                                <td>Synthesizer</td>
+                                <td><span class="status red"></span> Rejected</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
