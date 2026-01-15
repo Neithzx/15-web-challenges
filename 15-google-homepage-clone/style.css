@@ -1,0 +1,215 @@
+:root {
+    --text-color: #3c4043;
+    --link-color: #5f6368;
+    --button-bg: #f8f9fa;
+    --border-color: #dadce0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer vertically */
+    min-height: 100vh; /* Make body take full viewport height */
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: flex-end; /* Pushes nav to the right */
+    padding: 15px 25px;
+    font-size: 0.85rem;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between links */
+}
+
+.header nav a {
+    color: var(--text-color);
+}
+
+.header nav a:last-of-type { /* Target the avatar link */
+    padding: 0;
+    line-height: 1; /* Fixes potential padding issues with image */
+}
+
+.header nav img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    vertical-align: middle; /* Aligns with text */
+}
+
+.apps-icon {
+    font-size: 1.2rem;
+    color: var(--link-color);
+    margin-right: 5px; /* Space between icon and avatar */
+}
+
+/* --- MAIN SECTION --- */
+.main-section {
+    flex-grow: 1; /* Makes this section take all available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    padding-bottom: 100px; /* Space for footer */
+}
+
+.main-section img {
+    width: 272px;
+    height: 92px;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 584px; /* Standard Google search bar width */
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 10px 15px;
+    transition: box-shadow 0.3s;
+}
+
+.search-bar:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0); /* Remove border on hover for clean shadow */
+}
+
+.search-icon {
+    color: var(--link-color);
+    margin-right: 15px;
+}
+
+.search-input {
+    flex-grow: 1; /* Takes all available space */
+    border: none;
+    outline: none; /* Remove default focus outline */
+    font-size: 1rem;
+}
+
+.mic-icon, .camera-icon {
+    color: #4285f4; /* Google blue */
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-bg);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.buttons button:hover {
+    border-color: #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.language-options {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.language-options span {
+    margin-right: 5px;
+}
+
+.language-options a {
+    color: #1a0dab; /* Google blue for links */
+    margin: 0 3px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #f2f2f2;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid #e4e4e4;
+    
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-country {
+    color: var(--text-color);
+    margin-bottom: 10px; /* Space on mobile */
+    flex-basis: 100%; /* Take full width on mobile */
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow links to wrap */
+    gap: 20px; /* Space between link groups */
+    flex-basis: 100%; /* Take full width on mobile */
+    justify-content: center; /* Center on mobile */
+}
+
+.left-links, .right-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--link-color);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (min-width: 600px) {
+    .footer-country {
+        flex-basis: auto; /* Take natural width on desktop */
+        margin-bottom: 0;
+    }
+    .footer-links {
+        flex-basis: auto;
+        justify-content: flex-end; /* Push to right on desktop */
+    }
+}
+
+@media (max-width: 400px) {
+    .header nav a:nth-child(2) { /* Hide 'Images' link on very small screens */
+        display: none;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .buttons button {
+        width: 80%;
+    }
+    .search-bar {
+        max-width: 90%;
+    }
+}
