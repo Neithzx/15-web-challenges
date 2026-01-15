@@ -1,0 +1,215 @@
+:root {
+    --primary: #e74c3c;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: var(--text);
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- GRID LAYOUT --- */
+.container {
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* MOBILE DEFAULT (1 Column) */
+    grid-template-columns: 1fr;
+    /* We define names for the areas */
+    grid-template-areas: 
+        "header"
+        "featured"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+/* Assigning HTML elements to Grid Areas */
+.main-header { grid-area: header; }
+.featured    { grid-area: featured; }
+.sidebar     { grid-area: sidebar; }
+.content     { grid-area: content; }
+.main-footer { grid-area: footer; }
+
+/* --- STYLES --- */
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--dark);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo .dot { color: var(--primary); }
+
+.main-header nav a {
+    color: var(--dark);
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Featured (Hero) */
+.featured {
+    background: white;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.featured img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 30px;
+    background: white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 80%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.tag {
+    background: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.featured h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--dark);
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.sidebar h3 { color: white; margin-bottom: 15px; }
+
+.newsletter-box {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.newsletter-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+}
+
+.newsletter-box button {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.categories ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.categories li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Content List */
+.post {
+    display: flex;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.post-text {
+    padding: 20px;
+}
+
+.post-text h3 { margin-bottom: 10px; }
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark);
+    color: white;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+/* --- DESKTOP LAYOUT (The Grid Area Magic) --- */
+@media (min-width: 768px) {
+    .container {
+        /* Change from 1 col to 4 cols */
+        grid-template-columns: repeat(4, 1fr);
+        
+        /* Redraw the map! */
+        grid-template-areas: 
+            "header   header   header   header"
+            "featured featured featured featured"
+            "content  content  content  sidebar" /* Sidebar takes 1 col, Content takes 3 */
+            "footer   footer   footer   footer";
+    }
+}
